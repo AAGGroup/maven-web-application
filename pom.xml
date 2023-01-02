@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Landmark Technologies Snapshot Nexus Repository</name>
-	      <url>http://44.202.168.273:2500/repository/aag-snapshot/</url>
+	      <url>http://44.202.168.283:2500/repository/aag-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
