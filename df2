@@ -1,12 +1,7 @@
-FROM maven:3.5-jdk-8-alpine as build
-WORKDIR /app
-COPY  /var/lib/jenkins/workspace/freestyle/maven-web-application /app
-RUN  mvn install
-
 FROM tomcat:8.0.20-jre8 as deploy
 ENV CATALINA_HOME /usr/local/tomcat
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
-COPY --from=build /app/target/*war $CATALINA_HOME/webapps/
+COPY /target/*war $CATALINA_HOME/webapps/
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
